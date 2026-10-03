@@ -32,13 +32,16 @@ void loop()
   // btw analogRead stores 10-bit data
   // it represents 0V as 0 and 5V as 1023, we can convert it, like doing some math.
 
-  analogValue = (readValue * 5)/1023;
+  analogValue = (readValue * 5.0)/1023.0;
 
   Serial.print("Read Value: "); // serial monitor's print method
   Serial.println(readValue); // ln for line, like means this line has ended and start a new line next.
   Serial.print("Analog Value: ");
   Serial.println(analogValue);
 
+// Btw i just checked input for floating pin, it still gives an output other than 0, and i checked with multimeter, and it outputs 0.
+  // ig floating pin, can detect electromagnetic waves lol
+  
   delay(1000); 
   // to check serial monitor, you can see plug icon in bottom section in vscode OR
   // Shortcut-Key: Ctrl+Alt+S
